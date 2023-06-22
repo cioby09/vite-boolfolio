@@ -2,7 +2,16 @@
 export default {
     name: "ProjectCard",
     props: {
-        project: Object,
+        project: Object
+    },
+    computed: {
+        contentPreview() {
+            if (this.project.content && this.project.content.length > 100) {
+                return this.project.content.substring(0, 100) + "...";
+            } else {
+                return this.project.content
+            }
+        }
     }
 }
 </script>
@@ -10,7 +19,10 @@ export default {
 <template>
     <div class="card text-center">
         <h4>{{ project.title }}</h4>
-        <p>{{ project.content }}</p>
+        <p>{{ contentPreview }}</p>
+        <h5 v-if="project.type">{{ project.type.name }}</h5>
+        <span v-else>Nessuna tipologia</span>
+        <h6 v-for="element in project.technologies">{{ element.name }}</h6>
     </div>
 </template>
 
@@ -18,6 +30,7 @@ export default {
 
 <style scoped lang="scss">
 .card {
-    height: 500px;
+    height: 300px;
+    margin-bottom: 2rem;
 }
 </style>
