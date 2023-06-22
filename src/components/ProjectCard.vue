@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="card text-center">
+    <div class="card text-center d-flex justify-content-center align-items-center">
         <h4>{{ project.title }}</h4>
         <p>{{ contentPreview }}</p>
         <h5 v-if="project.type">{{ project.type.name }}</h5>
