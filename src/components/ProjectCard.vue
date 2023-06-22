@@ -23,6 +23,8 @@ export default {
         <h5 v-if="project.type">{{ project.type.name }}</h5>
         <span v-else>Nessuna tipologia</span>
         <h6 v-for="element in project.technologies">{{ element.name }}</h6>
+        <router-link :to='{ name: "singleProject", params: { slug: project.slug } }'
+            class="btn btn-primary ">Details</router-link>
     </div>
 </template>
 

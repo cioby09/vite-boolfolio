@@ -1,11 +1,11 @@
 <script>
 export default {
-    name: 'About'
+    name: "SingleProject"
 }
 </script>
 
 <template>
-    <h2 class="text-center">About Us</h2>
+    <h1 class="text-center">SingleProject</h1>
 </template>
 
 <style lang="scss" scoped></style>
